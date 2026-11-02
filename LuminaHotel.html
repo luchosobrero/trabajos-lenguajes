@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Hotels & Resorts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brown: {
+                            900: '#4A3728',
+                            800: '#5c4836'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .input-minimal {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #d1d5db;
+            background: transparent;
+            padding: 0.75rem 0;
+            font-size: 1rem;
+            color: #4A3728;
+            transition: border-color 0.3s ease;
+        }
+        
+        .input-minimal:focus {
+            outline: none;
+            border-bottom-color: #4A3728;
+        }
+
+        .input-minimal::placeholder {
+            color: #9ca3af;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="text-brown-900 antialiased selection:bg-gray-200 selection:text-brown-900">
+
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-40 border-b border-gray-100 flex justify-between items-center px-6 h-20 transition-all duration-300">
+        <div class="flex items-center gap-6">
+            <button id="menu-btn" class="text-brown-900 focus:outline-none hover:opacity-70 transition">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+            <a href="#" class="text-2xl font-bold tracking-widest uppercase serif text-brown-900">Lumina</a>
+        </div>
+        <a href="#reservas" class="hidden md:inline-block border border-brown-900 text-brown-900 px-6 py-2 text-xs uppercase tracking-widest hover:bg-brown-900 hover:text-white transition duration-300">Reservar</a>
+    </header>
+
+    <aside id="sidebar" class="fixed left-0 top-0 w-80 h-screen bg-white border-r border-gray-100 flex flex-col justify-between py-12 z-50 transform -translate-x-full transition-transform duration-500 ease-in-out shadow-2xl">
+        <div class="px-10">
+            <div class="flex justify-between items-center mb-16">
+                <a href="#" class="text-2xl font-bold tracking-widest uppercase serif text-brown-900">Lumina</a>
+                <button id="close-menu-btn" class="text-brown-900 hover:opacity-70 transition">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-6">
+                <a href="#inicio" class="sidebar-link text-sm font-medium text-gray-400 hover:text-brown-900 transition uppercase tracking-widest">Inicio</a>
+                <a href="#nosotros" class="sidebar-link text-sm font-medium text-gray-400 hover:text-brown-900 transition uppercase tracking-widest">Nosotros</a>
+                <a href="#habitaciones" class="sidebar-link text-sm font-medium text-gray-400 hover:text-brown-900 transition uppercase tracking-widest">Habitaciones</a>
+                <a href="#servicios" class="sidebar-link text-sm font-medium text-gray-400 hover:text-brown-900 transition uppercase tracking-widest">Servicios</a>
+                <a href="#sedes" class="sidebar-link text-sm font-medium text-gray-400 hover:text-brown-900 transition uppercase tracking-widest">Sedes</a>
+                <a href="#reservas" class="sidebar-link text-sm font-medium text-gray-400 hover:text-brown-900 transition uppercase tracking-widest">Reservas</a>
+            </nav>
+        </div>
+        <div class="px-10">
+            <div class="flex space-x-6 text-gray-400">
+                <a href="#" class="hover:text-brown-900 transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-brown-900 transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-brown-900 transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <div id="sidebar-overlay" class="fixed inset-0 bg-brown-900/20 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-500"></div>
+
+    <main class="w-full relative">
+        
+        <section id="inicio" class="relative h-screen flex items-center justify-center pt-20">
+            <div class="absolute inset-0 w-full h-full">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=80" alt="Hotel Fachada" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-white/40"></div>
+            </div>
+            <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+                <p class="uppercase tracking-[0.2em] text-sm text-brown-900 font-semibold mb-6">El arte del descanso</p>
+                <h1 class="text-6xl md:text-8xl font-normal text-brown-900 mb-10 leading-tight serif">Redefiniendo el <br/> Lujo Moderno</h1>
+                <a href="#reservas" class="inline-block bg-brown-900 text-white px-10 py-4 uppercase tracking-widest text-sm hover:bg-brown-800 transition duration-300">
+                    Planifique su estancia
+                </a>
+            </div>
+        </section>
+
+        <section id="nosotros" class="py-32 bg-white">
+            <div class="max-w-6xl mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl serif mb-6 text-brown-900">Nuestra Filosofía</h2>
+                        <div class="w-16 h-[1px] bg-brown-900 mb-8"></div>
+                        <p class="text-gray-500 font-light leading-relaxed mb-6">
+                            En Lumina, creemos que el verdadero lujo reside en la simplicidad, la atención al detalle y la conexión genuina con el entorno. Desde nuestros inicios, nos hemos dedicado a crear santuarios urbanos donde el diseño minimalista se encuentra con el confort absoluto.
+                        </p>
+                        <p class="text-gray-500 font-light leading-relaxed">
+                            Cada propiedad es una obra maestra de arquitectura, diseñada para inspirar calma y ofrecer una pausa en el ritmo acelerado del mundo moderno.
+                        </p>
+                    </div>
+                    <div class="relative h-[600px]">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt="Lobby Minimalista" class="w-full h-full object-cover grayscale-[20%]" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="habitaciones" class="py-32 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6 lg:px-12 text-center">
+                <h2 class="text-4xl md:text-5xl serif mb-6 text-brown-900">Estancias Exclusivas</h2>
+                <div class="w-16 h-[1px] bg-brown-900 mx-auto mb-16"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                    <!-- Habitación 1 -->
+                    <div class="bg-white p-8 shadow-sm">
+                        <div class="overflow-hidden mb-8 h-80">
+                            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Suite Signature" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+                        </div>
+                        <h3 class="text-2xl serif text-brown-900 mb-2">Suite Signature</h3>
+                        <p class="text-gray-400 text-xs font-medium uppercase tracking-widest mb-4">45 m² | Vista a la Ciudad</p>
+                        <p class="text-gray-500 font-light text-sm mb-6">Un espacio diseñado para la serenidad, equipado con cama king-size, sábanas de algodón egipcio y ventanales panorámicos.</p>
+                        <a href="#reservas" class="text-brown-900 uppercase text-xs tracking-widest border-b border-brown-900 pb-1 hover:text-brown-800 transition">Explorar</a>
+                    </div>
+                    
+                    <!-- Habitación 2 -->
+                    <div class="bg-white p-8 shadow-sm md:mt-16">
+                        <div class="overflow-hidden mb-8 h-80">
+                            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Penthouse Lumina" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+                        </div>
+                        <h3 class="text-2xl serif text-brown-900 mb-2">Penthouse Lumina</h3>
+                        <p class="text-gray-400 text-xs font-medium uppercase tracking-widest mb-4">120 m² | Terraza Privada</p>
+                        <p class="text-gray-500 font-light text-sm mb-6">Nuestra joya de la corona. Espacios de estar separados, comedor privado, baño tipo spa y servicio de mayordomo las 24 horas.</p>
+                        <a href="#reservas" class="text-brown-900 uppercase text-xs tracking-widest border-b border-brown-900 pb-1 hover:text-brown-800 transition">Explorar</a>
+                    </div>
+
+                    <!-- Habitación 3 (NUEVA) -->
+                    <div class="bg-white p-8 shadow-sm">
+                        <div class="overflow-hidden mb-8 h-80">
+                            <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80" alt="Suite Zen Garden" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+                        </div>
+                        <h3 class="text-2xl serif text-brown-900 mb-2">Suite Zen Garden</h3>
+                        <p class="text-gray-400 text-xs font-medium uppercase tracking-widest mb-4">60 m² | Jardín Privado</p>
+                        <p class="text-gray-500 font-light text-sm mb-6">Inspirada en la estética japonesa minimalista, cuenta con un patio zen interior, materiales de madera noble y tina de inmersión de madera hinoki.</p>
+                        <a href="#reservas" class="text-brown-900 uppercase text-xs tracking-widest border-b border-brown-900 pb-1 hover:text-brown-800 transition">Explorar</a>
+                    </div>
+
+                    <!-- Habitación 4 (NUEVA) -->
+                    <div class="bg-white p-8 shadow-sm md:mt-16">
+                        <div class="overflow-hidden mb-8 h-80">
+                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Loft Minimalista" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+                        </div>
+                        <h3 class="text-2xl serif text-brown-900 mb-2">Loft Minimalista</h3>
+                        <p class="text-gray-400 text-xs font-medium uppercase tracking-widest mb-4">55 m² | Doble Altura</p>
+                        <p class="text-gray-500 font-light text-sm mb-6">Ambiente diáfano de concepto abierto con techos altos, iluminación arquitectónica regulable, zona de trabajo integrada y acabados en cemento alisado.</p>
+                        <a href="#reservas" class="text-brown-900 uppercase text-xs tracking-widest border-b border-brown-900 pb-1 hover:text-brown-800 transition">Explorar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="py-32 bg-brown-900 text-white text-center">
+            <div class="max-w-6xl mx-auto px-6 lg:px-12">
+                <h2 class="text-4xl md:text-5xl serif mb-6">Experiencias a Medida</h2>
+                <div class="w-16 h-[1px] bg-white/50 mx-auto mb-20"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div>
+                        <i data-lucide="utensils-crossed" class="w-12 h-12 mx-auto mb-6 text-white/80"></i>
+                        <h3 class="text-xl serif mb-3">Alta Cocina</h3>
+                        <p class="text-white/60 font-light text-sm">Restaurantes galardonados con estrellas Michelin, ofreciendo menús de degustación inspirados en la gastronomía local y mundial.</p>
+                    </div>
+                    <div>
+                        <i data-lucide="flower-2" class="w-12 h-12 mx-auto mb-6 text-white/80"></i>
+                        <h3 class="text-xl serif mb-3">Spa Holístico</h3>
+                        <p class="text-white/60 font-light text-sm">Tratamientos rejuvenecedores, piscinas de hidroterapia y salas de meditación diseñadas para restaurar el equilibrio físico y mental.</p>
+                    </div>
+                    <div>
+                        <i data-lucide="wine" class="w-12 h-12 mx-auto mb-6 text-white/80"></i>
+                        <h3 class="text-xl serif mb-3">Lounge Bar</h3>
+                        <p class="text-white/60 font-light text-sm">Una cuidada selección de vinos de autor y coctelería de vanguardia en un ambiente íntimo y sofisticado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sedes" class="py-32 bg-white">
+            <div class="max-w-6xl mx-auto px-6 lg:px-12">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl serif mb-6 text-brown-900">Nuestros Destinos</h2>
+                    <div class="w-16 h-[1px] bg-brown-900 mx-auto mb-6"></div>
+                    <p class="text-gray-500 max-w-xl mx-auto font-light">
+                        Ubicaciones exclusivas seleccionadas cuidadosamente para ofrecerle experiencias inolvidables en las capitales más vibrantes.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="group cursor-pointer">
+                        <div class="overflow-hidden mb-6 relative">
+                            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="Tokyo" class="w-full h-[500px] object-cover transition duration-700 group-hover:scale-105" />
+                        </div>
+                        <h3 class="text-xl serif text-brown-900 mb-1">Lumina Tokyo</h3>
+                        <p class="text-gray-400 text-xs font-medium uppercase tracking-widest">Japón</p>
+                    </div>
+                    <div class="group cursor-pointer md:mt-12">
+                        <div class="overflow-hidden mb-6 relative">
+                            <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80" alt="Paris" class="w-full h-[500px] object-cover transition duration-700 group-hover:scale-105" />
+                        </div>
+                        <h3 class="text-xl serif text-brown-900 mb-1">Lumina Paris</h3>
+                        <p class="text-gray-400 text-xs font-medium uppercase tracking-widest">Francia</p>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="overflow-hidden mb-6 relative">
+                            <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80" alt="New York" class="w-full h-[500px] object-cover transition duration-700 group-hover:scale-105" />
+                        </div>
+                        <h3 class="text-xl serif text-brown-900 mb-1">Lumina New York</h3>
+                        <p class="text-gray-400 text-xs font-medium uppercase tracking-widest">Estados Unidos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reservas" class="py-32 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-6 lg:px-12 w-full">
+                <div class="bg-white p-10 md:p-16 shadow-sm border border-gray-100">
+                    
+                    <div id="booking-container">
+                        <div class="mb-12 text-center md:text-left">
+                            <h2 class="text-3xl md:text-4xl serif mb-4 text-brown-900">Su Reserva</h2>
+                            <div class="w-12 h-[1px] bg-brown-900 mb-6 mx-auto md:mx-0"></div>
+                            <p class="text-gray-500 font-light text-sm">Asegure su estancia con nosotros de manera rápida y segura.</p>
+                        </div>
+
+                        <form id="reservation-form" class="space-y-10">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <label for="name" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Nombre Completo</label>
+                                    <input type="text" id="name" required class="input-minimal">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Correo Electrónico</label>
+                                    <input type="email" id="email" required class="input-minimal">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <label for="checkin" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Check-in</label>
+                                    <input type="date" id="checkin" required class="input-minimal text-gray-700">
+                                </div>
+                                <div>
+                                    <label for="checkout" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Check-out</label>
+                                    <input type="date" id="checkout" required class="input-minimal text-gray-700">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <label for="destination" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Destino</label>
+                                    <select id="destination" required class="input-minimal bg-white text-gray-700 cursor-pointer">
+                                        <option value="" disabled selected>Seleccione</option>
+                                        <option value="tokyo">Lumina Tokyo</option>
+                                        <option value="paris">Lumina Paris</option>
+                                        <option value="new-york">Lumina New York</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="rooms" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Habitaciones</label>
+                                    <select id="rooms" required class="input-minimal bg-white text-gray-700 cursor-pointer">
+                                        <option value="1">1 Habitación</option>
+                                        <option value="2">2 Habitaciones</option>
+                                        <option value="3">3 Habitaciones</option>
+                                        <option value="4" selected>4 Habitaciones</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="pt-6">
+                                <button type="submit" class="w-full bg-brown-900 text-white py-4 uppercase tracking-widest text-sm hover:bg-brown-800 transition duration-300">
+                                    Confirmar Disponibilidad
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="success-message" class="hidden text-center py-16">
+                        <div class="w-20 h-20 border-2 border-brown-900 rounded-full flex items-center justify-center mx-auto mb-8">
+                            <i data-lucide="check" class="w-8 h-8 text-brown-900"></i>
+                        </div>
+                        <h3 class="text-3xl serif text-brown-900 mb-4">Reserva Confirmada</h3>
+                        <p class="text-gray-500 font-light mb-10 max-w-md mx-auto leading-relaxed">
+                            Hemos recibido su solicitud para <strong id="success-dest" class="text-brown-900 font-normal"></strong>. En breve recibirá un correo con los detalles de su itinerario.
+                        </p>
+                        <button id="reset-btn" class="border border-brown-900 px-10 py-4 text-xs uppercase tracking-widest hover:bg-brown-900 hover:text-white transition duration-300">
+                            Nueva Reserva
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-white py-20 px-6 lg:px-12">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-sm text-gray-400">
+                <div class="col-span-1 md:col-span-2">
+                    <h4 class="text-2xl serif text-brown-900 mb-6 uppercase tracking-widest">Lumina</h4>
+                    <p class="font-light max-w-sm mb-6">Redefiniendo el lujo moderno a través de la simplicidad, el diseño y un servicio excepcional en todo el mundo.</p>
+                </div>
+                <div>
+                    <h5 class="text-brown-900 uppercase tracking-widest mb-6 font-semibold">Descubrir</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#nosotros" class="hover:text-brown-900 transition">Nuestra Historia</a></li>
+                        <li><a href="#habitaciones" class="hover:text-brown-900 transition">Habitaciones</a></li>
+                        <li><a href="#servicios" class="hover:text-brown-900 transition">Experiencias</a></li>
+                        <li><a href="#sedes" class="hover:text-brown-900 transition">Destinos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-brown-900 uppercase tracking-widest mb-6 font-semibold">Contacto</h5>
+                    <ul class="space-y-3 font-light">
+                        <li>info@luminahotels.com</li>
+                        <li>+1 (800) 123-4567</li>
+                        <li class="pt-4 flex space-x-4">
+                            <a href="#" class="hover:text-brown-900 transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                            <a href="#" class="hover:text-brown-900 transition"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="max-w-6xl mx-auto mt-16 pt-8 border-t border-gray-100 text-center text-xs tracking-widest uppercase">
+                &copy; 2026 Lumina Hotels. Todos los derechos reservados.
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('-translate-x-full');
+            
+            if (sidebar.classList.contains('-translate-x-full')) {
+                overlay.classList.remove('opacity-100');
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                }, 500); 
+            } else {
+                overlay.classList.remove('hidden');
+                setTimeout(() => {
+                    overlay.classList.add('opacity-100');
+                }, 10);
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        const form = document.getElementById('reservation-form');
+        const bookingContainer = document.getElementById('booking-container');
+        const successMessage = document.getElementById('success-message');
+        const successDest = document.getElementById('success-dest');
+        const resetBtn = document.getElementById('reset-btn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const selectElement = document.getElementById('destination');
+            const destinationName = selectElement.options[selectElement.selectedIndex].text;
+            
+            successDest.textContent = destinationName;
+            bookingContainer.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+            successMessage.classList.add('animate-fade-in');
+        });
+
+        resetBtn.addEventListener('click', function() {
+            form.reset();
+            successMessage.classList.add('hidden');
+            bookingContainer.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
