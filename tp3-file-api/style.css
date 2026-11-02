@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+  color: #e2e8f0;
+  padding: 40px 20px;
+}
+h1 {
+  color: #f8fafc;
+  font-weight: 600;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 10px;
+}
+h2 {
+  font-size: 1.2rem;
+  margin-top: 30px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+input[type="file"] {
+  background-color: #1e293b;
+  color: #cbd5e1;
+  padding: 10px;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  font-family: 'Consolas', monospace;
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 400px;
+}
+input[type="file"]::file-selector-button {
+  background-color: #334155;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: background-color 0.2s;
+}
+input[type="file"]::file-selector-button:hover {
+  background-color: #475569;
+}
+button {
+  margin: 10px;
+  padding: 12px 28px;
+  cursor: pointer;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #1d4ed8;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-in-out;
+}
+button:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+  transform: translateY(-1px);
+}
+button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+#info, #contenido {
+  background-color: #020617;
+  border: 1px solid #1e293b;
+  border-left: 4px solid #2563eb;
+  border-radius: 4px;
+  padding: 20px;
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+  font-family: 'Consolas', 'Courier New', monospace;
+  color: #a7f3d0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+#preview {
+  max-width: 500px;
+  margin: 20px auto 0;
+  display: none;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  background-color: #020617;
+  padding: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+}
