@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación - TP1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h2>Ubicación</h2>
+        
+        <div class="input-group">
+            <label for="nombre">Nombre Ubicación</label>
+            <input type="text" id="nombre" placeholder="Nombre Ubicacion">
+        </div>
+
+        <div class="input-group">
+            <label for="latitud">Latitud</label>
+            <input type="text" id="latitud" value="28.3537921">
+        </div>
+
+        <div class="input-group">
+            <label for="longitud">Longitud</label>
+            <input type="text" id="longitud" value="-81.5618197">
+        </div>
+
+        <button id="btnAbrir">Abrir Ubicación</button>
+    </div>
+
+    <script>
+        document.getElementById('btnAbrir').addEventListener('click', () => {
+            const lat = document.getElementById('latitud').value.trim().replace(',', '.');
+            const lng = document.getElementById('longitud').value.trim().replace(',', '.');
+
+            if (!lat || !lng) {
+                alert('Por favor ingresá latitud y longitud válidas.');
+                return;
+            }
+
+            const url = `https://www.google.com/maps?q=${lat},${lng}`;
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
