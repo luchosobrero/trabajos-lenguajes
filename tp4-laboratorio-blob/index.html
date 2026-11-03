@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio BLOB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="contenedor">
+        <section class="encabezado">
+            <h1>
+                Laboratorio <span>BLOB</span>
+            </h1>
+            <p>
+                Creá un archivo de texto, descargalo y trabajá
+                con una parte de su contenido utilizando
+                <strong>Slice</strong>.
+            </p>
+        </section>
+        <section class="tarjeta">
+            <div class="titulo-tarjeta">
+                <div>
+                    <h2>Práctica interactiva</h2>
+                    <p>
+                        Probá cada operación y observá el resultado.
+                    </p>
+                </div>
+            </div>
+            <div class="area-texto">
+                <label for="texto">
+                    Texto para crear el BLOB
+                </label>
+                <textarea
+                    id="texto"
+                    placeholder="Escribí aquí el contenido del archivo..."
+                >Hola, este archivo fue creado utilizando un objeto BLOB desde JavaScript.</textarea>
+            </div>
+            <div class="botones">
+                <button
+                    id="crearBlob"
+                    class="principal"
+                >
+                    ✦ Crear BLOB
+                </button>
+                <button id="descargarBlob">
+                    ↓ Descargar BLOB
+                </button>
+                <button id="usarSlice">
+                    ◐ Usar Slice
+                </button>
+            </div>
+            <div
+                class="estado"
+                id="estado"
+            >
+                <span class="punto"></span>
+                <span>
+                    Esperando una acción...
+                </span>
+            </div>
+            <div class="resultado">
+                <div class="cabecera-resultado">
+                    <span>
+                        Resultado
+                    </span>
+                    <small id="tipoBlob">
+                        Sin BLOB creado
+                    </small>
+                </div>
+                <pre id="contenido">
+Todavía no hay contenido para mostrar.
+                </pre>
+            </div>
+        </section>
+        <footer>
+            <span>
+                Universidad Católica de Salta
+            </span>
+            <span>•</span>
+            <span>
+                Ingeniería en Informática
+            </span>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
