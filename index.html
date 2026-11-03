@@ -7,13 +7,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #FDFBF7; /* Fondo beige sutil y cálido */
+        }
         .serif { font-family: 'Playfair Display', serif; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col justify-between">
+<body class="text-gray-800 min-h-screen flex flex-col justify-between">
     
-    <header class="bg-white border-b border-gray-200 py-6 px-10">
+    <header class="bg-white/80 backdrop-blur-md border-b border-gray-200/80 py-6 px-10 sticky top-0 z-50">
         <h1 class="text-2xl serif font-semibold text-[#4A3728]">Trabajos Prácticos - Lenguajes</h1>
         <p class="text-sm text-gray-500">Alumno: Luciano Sobrero</p>
     </header>
@@ -22,8 +25,19 @@
         <h2 class="text-3xl serif text-[#4A3728] mb-8">Listado de Proyectos del Semestre</h2>
         
         <div class="grid grid-cols-1 gap-6">
+            <!-- TP 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200/80 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h3 class="text-xl font-medium text-[#4A3728]">TP 1: Apertura de Coordenadas en Google Maps</h3>
+                    <p class="text-sm text-gray-500 mt-1">Desarrollado con HTML, CSS y JavaScript para abrir coordenadas en Google Maps.</p>
+                </div>
+                <a href="./tp1-ubicacion/index.html" target="_blank" class="bg-[#4A3728] text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-[#38291d] transition">
+                    Ver Proyecto
+                </a>
+            </div>
+
             <!-- TP 2 -->
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200/80 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                     <h3 class="text-xl font-medium text-[#4A3728]">TP 2: Historial de Recorrido (Geolocalización)</h3>
                     <p class="text-sm text-gray-500 mt-1">Desarrollado con Leaflet.js, CSS personalizado y API de Geolocalización.</p>
@@ -34,7 +48,7 @@
             </div>
 
             <!-- TP 3 -->
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200/80 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                     <h3 class="text-xl font-medium text-[#4A3728]">TP 3: Lectura de Archivos con File API</h3>
                     <p class="text-sm text-gray-500 mt-1">Desarrollado con JavaScript FileReader API y estilos personalizados.</p>
@@ -45,65 +59,4 @@
             </div>
 
             <!-- TP 4 -->
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div>
-                    <h3 class="text-xl font-medium text-[#4A3728]">TP 4: Laboratorio BLOB y Slice (Vanilla JS)</h3>
-                    <p class="text-sm text-gray-500 mt-1">Desarrollado con objetos Blob, manipulación de texto y método slice().</p>
-                </div>
-                <a href="./tp4-laboratorio-blob/index.html" target="_blank" class="bg-[#4A3728] text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-[#38291d] transition">
-                    Ver Proyecto
-                </a>
-            </div>
-
-            <!-- TP 5 -->
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div>
-                    <h3 class="text-xl font-medium text-[#4A3728]">TP 5: Uso de Blobs y Slice en React</h3>
-                    <p class="text-sm text-gray-500 mt-1">Desarrollado con componentes funcionales de React, Hooks y Blob API.</p>
-                </div>
-                <a href="https://tp5-react-blob-rouge.vercel.app/" target="_blank" class="bg-[#4A3728] text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-[#38291d] transition">
-                    Ver Proyecto
-                </a>
-            </div>
-
-            <!-- TP 6 -->
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div>
-                    <h3 class="text-xl font-medium text-[#4A3728]">TP 6: React con Header, Footer y Modal</h3>
-                    <p class="text-sm text-gray-500 mt-1">Aplicación React con componentes modulares, layout y manipulación de estado.</p>
-                </div>
-                <a href="https://tp6-react-blob.vercel.app/" target="_blank" class="bg-[#4A3728] text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-[#38291d] transition">
-                    Ver Proyecto
-                </a>
-            </div>
-
-            <!-- TP 7 -->
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div>
-                    <h3 class="text-xl font-medium text-[#4A3728]">TP 7: React Router & Menú Desplegable (Drawer)</h3>
-                    <p class="text-sm text-gray-500 mt-1">Navegación SPA de 4 rutas, manipulación de Blobs, FileReader y Menú lateral minimalista.</p>
-                </div>
-                <a href="https://tp7-react-blob-seven.vercel.app/" target="_blank" class="bg-[#4A3728] text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-[#38291d] transition">
-                    Ver Proyecto
-                </a>
-            </div>
-
-            <!-- TP 9 -->
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div>
-                    <h3 class="text-xl font-medium text-[#4A3728]">TP 9: Página Web de Hotel (Lumina)</h3>
-                    <p class="text-sm text-gray-500 mt-1">Desarrollado con HTML, CSS, Tailwind y diseño minimalista.</p>
-                </div>
-                <a href="./LuminaHotel.html" target="_blank" class="bg-[#4A3728] text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-[#38291d] transition">
-                    Ver Proyecto
-                </a>
-            </div>
-        </div>
-    </main>
-
-    <footer class="bg-white border-t border-gray-200 py-6 text-center text-xs text-gray-400">
-        UCASAL - Ingeniería en Informática © 2026
-    </footer>
-
-</body>
-</html>
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200/80 flex flex-
